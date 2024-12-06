@@ -14,6 +14,7 @@ def read_input_file(file_path: str) -> list[str]:
         return [list(line.strip()) for line in lines]
 
 
+# To-Do: Using Binary Search (Bisect) maybe...
 def get_next_position(
     current_position: tuple,
     direction_index: int,
@@ -105,6 +106,9 @@ def solution(lines: str):
     
 
     # Find Loops (Using Obstructions)
+
+    # Further To-Do Optimization (skip obstructions for which guard does not reach the next obstruction
+    # by checking row/column for the next path) -- but it does not reduce number of obstruction to check by a large factor
     loop_count = 0
     for r, c in full_path:
         if (r, c)==guard_position:
